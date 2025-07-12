@@ -3,10 +3,8 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import InternshipCard from './InternshipCard';
 import TestimonialCard from './TestimonialCard';
-import MentorCard from './MentorCard';
 import { FaCode, FaLaptopCode, FaChartLine, FaPalette, FaDatabase, 
-         FaProjectDiagram, FaUserTie, FaCertificate, FaClock,
-         FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+         FaProjectDiagram, FaUserTie, FaCertificate, FaClock } from 'react-icons/fa';
 
 const Home = () => {
   // Sample data for internships
@@ -96,48 +94,78 @@ const Home = () => {
     },
   ];
 
-  // Sample mentors
-  const mentors = [
+  // Technologies we specialize in
+  const technologies = [
     {
       id: 1,
-      name: "Harsh Pratap",
-      domain: "MERN Stack Lead",
-      image: "https://randomuser.me/api/portraits/men/11.jpg",
+      name: "React Native",
+      category: "Mobile",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      bgColor: "bg-cyan-900",
+      textColor: "text-cyan-300",
+      borderColor: "border-cyan-500"
     },
     {
       id: 2,
-      name: "Rajiv Ranjan",
-      domain: ".NET Development",
-      image: "https://randomuser.me/api/portraits/men/36.jpg",
+      name: "TypeScript",
+      category: "Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      bgColor: "bg-blue-900",
+      textColor: "text-blue-300",
+      borderColor: "border-blue-500"
     },
     {
       id: 3,
-      name: "Rajiv Ranjan",
-      domain: "DSA Expert",
-      image: "https://randomuser.me/api/portraits/men/36.jpg",
+      name: "Node.js",
+      category: "Backend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      bgColor: "bg-green-900",
+      textColor: "text-green-300",
+      borderColor: "border-green-500"
     },
     {
       id: 4,
-      name: "Jessica Taylor",
-      domain: "UI/UX Design",
-      image: "https://randomuser.me/api/portraits/women/42.jpg",
+      name: "Python",
+      category: "Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      bgColor: "bg-yellow-900",
+      textColor: "text-yellow-300",
+      borderColor: "border-yellow-500"
     },
     {
       id: 5,
-      name: "Pradeep Nagarkoti",
-      domain: "Data Analytics",
-      image: "https://randomuser.me/api/portraits/men/55.jpg",
+      name: ".NET",
+      category: "Backend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
+      bgColor: "bg-purple-900",
+      textColor: "text-purple-300",
+      borderColor: "border-purple-500"
     },
     {
       id: 6,
-      name: "Mohd Imran",
-      domain: "Cloud Solutions",
-      image: "https://randomuser.me/api/portraits/women/63.jpg",
+      name: "Java",
+      category: "Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      bgColor: "bg-orange-900",
+      textColor: "text-orange-300",
+      borderColor: "border-orange-500"
     },
+    {
+      id: 7,
+      name: "AWS",
+      category: "Cloud",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      bgColor: "bg-gray-900",
+      textColor: "text-gray-300",
+      borderColor: "border-gray-500"
+    }
   ];
 
+  // Duplicate technologies for infinite scroll effect
+  const duplicatedTechnologies = [...technologies, ...technologies];
+
   return (
-    <div className="font-sans min-h-screen bg-white w-full">
+    <div className="font-sans min-h-screen w-full">
       {/* Navbar will be placed here */}
       <Navbar />
 
@@ -169,12 +197,33 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Technologies We Specialize In */}
+      <section className="py-16 w-full overflow-hidden">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">TECHNOLOGIES WE SPECIALIZE IN</h2>
+          
+          <div className="relative">
+            <div className="animate-marquee flex space-x-8">
+              {duplicatedTechnologies.map((tech, index) => (
+                <div key={`${tech.id}-${index}`} className="flex-none w-44">
+                  <div className={`${tech.bgColor} bg-opacity-30 border ${tech.borderColor} rounded-lg p-5 flex flex-col items-center hover:bg-opacity-50 transition-all`}>
+                    <img src={tech.icon} alt={tech.name} className="w-16 h-16 mb-3" />
+                    <h3 className={`text-lg font-semibold ${tech.textColor}`}>{tech.name}</h3>
+                    <p className="text-sm text-white opacity-80">{tech.category}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Internship Categories */}
-      <section className="py-16 md:py-24 bg-white w-full">
+      <section className="py-16 md:py-24 w-full">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Internship Tracks</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Internship Tracks</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Choose your path and build industry-relevant skills with our specialized internship tracks
             </p>
           </div>
@@ -192,11 +241,11 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 md:py-24 bg-gray-50 w-full">
+      <section className="py-16 md:py-24 w-full">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Us</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose Us</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Our internship program is designed to give you the skills, experience, and confidence needed to excel in tech
             </p>
           </div>
@@ -216,11 +265,11 @@ const Home = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="py-16 md:py-24 bg-white w-full">
+      <section className="py-16 md:py-24 w-full">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Success Stories</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Success Stories</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Hear from our alumni who transformed their careers through our internship program
             </p>
           </div>
@@ -232,28 +281,6 @@ const Home = () => {
                 role={testimonial.role}
                 image={testimonial.image}
                 text={testimonial.text}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Meet Our Mentors */}
-      <section className="py-16 md:py-24 bg-gray-50 w-full">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet Our Mentors</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Learn from industry experts with years of experience in leading tech companies
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {mentors.map((mentor) => (
-              <MentorCard
-                key={mentor.id}
-                name={mentor.name}
-                domain={mentor.domain}
-                image={mentor.image}
               />
             ))}
           </div>
