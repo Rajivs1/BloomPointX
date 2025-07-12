@@ -152,6 +152,7 @@ button:focus-visible {
 
 .neural-network-section {
   position: relative;
+  background-color: #000015;
 }
 
 .neural-network-section::before {
@@ -163,6 +164,7 @@ button:focus-visible {
   height: 100px;
   background: linear-gradient(to bottom, rgba(0, 0, 34, 1), transparent);
   z-index: 1;
+  pointer-events: none;
 }
 
 .neural-network-section::after {
@@ -174,6 +176,7 @@ button:focus-visible {
   height: 100px;
   background: linear-gradient(to top, rgba(0, 0, 34, 1), transparent);
   z-index: 1;
+  pointer-events: none;
 }
 
 /* Enhanced Neural Network Animation Styles */
@@ -209,7 +212,7 @@ button:focus-visible {
     filter: drop-shadow(0 0 5px rgba(66, 153, 225, 0.5));
   }
   50% {
-    filter: drop-shadow(0 0 15px rgba(66, 153, 225, 0.8)) drop-shadow(0 0 30px rgba(66, 153, 225, 0.4));
+    filter: drop-shadow(0 0 20px rgba(66, 153, 225, 0.8)) drop-shadow(0 0 40px rgba(66, 153, 225, 0.4));
   }
   100% {
     filter: drop-shadow(0 0 5px rgba(66, 153, 225, 0.5));
@@ -218,6 +221,34 @@ button:focus-visible {
 
 .pulse-glow-strong {
   animation: pulse-glow-strong 3s infinite;
+}
+
+/* Neural network enhanced styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+  transform: translateY(-5px);
+}
+
+.glass-tag {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Tech card gradients */

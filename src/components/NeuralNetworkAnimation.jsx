@@ -1,7 +1,54 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Text3D, Center } from '@react-three/drei';
+import { OrbitControls, Text3D, Center, Float, Text } from '@react-three/drei';
 import * as THREE from 'three';
+
+// Falling particle effect (larger particles on the left side)
+const FallingParticle = ({ position, color, size }) => {
+  const meshRef = useRef();
+  const [speed] = useState(Math.random() * 0.05 + 0.02);
+  const [rotation] = useState({
+    x: Math.random() * 0.01,
+    y: Math.random() * 0.01,
+    z: Math.random() * 0.01
+  });
+  
+  useFrame((state) => {
+    if (meshRef.current) {
+      // Move down
+      meshRef.current.position.y -= speed;
+      
+      // Rotate slowly
+      meshRef.current.rotation.x += rotation.x;
+      meshRef.current.rotation.y += rotation.y;
+      meshRef.current.rotation.z += rotation.z;
+      
+      // Reset position when it goes below the view
+      if (meshRef.current.position.y < -5) {
+        meshRef.current.position.y = 5;
+        meshRef.current.position.x = position[0] + (Math.random() - 0.5) * 2;
+      }
+      
+      // Pulse glow effect
+      meshRef.current.material.emissiveIntensity = 1 + Math.sin(state.clock.getElapsedTime() * 2) * 0.5;
+    }
+  });
+
+  return (
+    <mesh ref={meshRef} position={position}>
+      <icosahedronGeometry args={[size, 1]} />
+      <meshStandardMaterial 
+        color={color} 
+        emissive={color}
+        emissiveIntensity={1.5}
+        transparent
+        opacity={0.8}
+        metalness={0.3}
+        roughness={0.4}
+      />
+    </mesh>
+  );
+};
 
 // Lightning particle effect
 const LightningParticle = ({ position, color }) => {
@@ -19,7 +66,7 @@ const LightningParticle = ({ position, color }) => {
       // Flickering effect
       const flicker = 0.7 + Math.sin(state.clock.getElapsedTime() * 10 * Math.random()) * 0.3;
       meshRef.current.material.opacity = flicker;
-      meshRef.current.material.emissiveIntensity = flicker * 2;
+      meshRef.current.material.emissiveIntensity = flicker * 3;
     }
   });
 
@@ -29,7 +76,7 @@ const LightningParticle = ({ position, color }) => {
       <meshStandardMaterial 
         color={color} 
         emissive={color}
-        emissiveIntensity={1.5}
+        emissiveIntensity={2}
         transparent
         opacity={0.8}
       />
@@ -53,21 +100,43 @@ const FloatingText = () => {
       <Center>
         <Text3D
           font="/fonts/Inter_Bold.json"
-          size={0.5}
-          height={0.1}
-          curveSegments={12}
+          size={0.6}
+          height={0.15}
+          curveSegments={16}
+          bevelEnabled
+          bevelThickness={0.02}
+          bevelSize={0.02}
+          bevelSegments={5}
         >
           BloomPointX
           <meshStandardMaterial 
             color="#4fc3f7"
             emissive="#4fc3f7"
-            emissiveIntensity={0.8}
-            metalness={0.5}
+            emissiveIntensity={1.2}
+            metalness={0.7}
             roughness={0.2}
           />
         </Text3D>
       </Center>
     </group>
+  );
+};
+
+// Floating tech keywords
+const FloatingKeyword = ({ text, position, color, size = 0.2 }) => {
+  return (
+    <Float speed={2} rotationIntensity={0.2} floatIntensity={0.5}>
+      <Text
+        position={position}
+        fontSize={size}
+        color={color}
+        font="/fonts/Inter_Bold.json"
+        anchorX="center"
+        anchorY="middle"
+      >
+        {text}
+      </Text>
+    </Float>
   );
 };
 
@@ -86,7 +155,7 @@ const Particle = ({ position, color, size, isHovered }) => {
         meshRef.current.position.z = initialPosition[2] + Math.sin(state.clock.getElapsedTime()) * 0.15;
         
         // Glow effect
-        meshRef.current.material.emissiveIntensity = 1.5 + Math.sin(state.clock.getElapsedTime() * 3) * 0.5;
+        meshRef.current.material.emissiveIntensity = 2 + Math.sin(state.clock.getElapsedTime() * 3) * 0.5;
       } else {
         // Subtle movement when not hovered
         meshRef.current.position.x = initialPosition[0] + Math.sin(state.clock.getElapsedTime()) * 0.05;
@@ -94,7 +163,7 @@ const Particle = ({ position, color, size, isHovered }) => {
         meshRef.current.position.z = initialPosition[2];
         
         // Normal emissive intensity
-        meshRef.current.material.emissiveIntensity = 0.8;
+        meshRef.current.material.emissiveIntensity = 1;
       }
     }
   });
@@ -108,7 +177,7 @@ const Particle = ({ position, color, size, isHovered }) => {
       <meshStandardMaterial 
         color={color} 
         emissive={color}
-        emissiveIntensity={0.8}
+        emissiveIntensity={1}
         transparent
         opacity={0.9}
       />
@@ -133,45 +202,93 @@ const Connection = ({ start, end, color, isHovered }) => {
   
   useFrame((state) => {
     if (ref.current && isHovered) {
-      ref.current.material.opacity = 0.5 + Math.sin(state.clock.getElapsedTime() * 2) * 0.3;
+      ref.current.material.opacity = 0.7 + Math.sin(state.clock.getElapsedTime() * 2) * 0.3;
+      ref.current.material.linewidth = 2;
     } else if (ref.current) {
-      ref.current.material.opacity = 0.4;
+      ref.current.material.opacity = 0.5;
     }
   });
 
   return (
     <line ref={ref}>
       <bufferGeometry />
-      <lineBasicMaterial color={color} transparent opacity={0.4} />
+      <lineBasicMaterial color={color} transparent opacity={0.5} linewidth={1} />
     </line>
   );
 };
 
 // Neural Network component that contains particles and connections
-const NeuralNetwork = ({ count = 40 }) => {
+const NeuralNetwork = ({ count = 60 }) => {
   const [particles, setParticles] = useState([]);
   const [connections, setConnections] = useState([]);
   const [lightningParticles, setLightningParticles] = useState([]);
+  const [fallingParticles, setFallingParticles] = useState([]);
   const [hovered, setHovered] = useState(false);
+  const [keywords, setKeywords] = useState([]);
   
   useEffect(() => {
+    // Generate keywords
+    const techKeywords = [
+      { text: "AI", position: [-3, 2, 0], color: "#ff5b79", size: 0.3 },
+      { text: "Machine Learning", position: [3, 1.5, 0], color: "#4fc3f7", size: 0.25 },
+      { text: "Neural Networks", position: [2.5, -1, 0], color: "#8bc34a", size: 0.25 },
+      { text: "Data Science", position: [-2, -1.5, 0], color: "#ffca28", size: 0.25 },
+      { text: "Deep Learning", position: [0, 2.5, 0], color: "#7e57c2", size: 0.25 },
+      { text: "Python", position: [-3.5, 0, 0], color: "#26c6da", size: 0.25 },
+      { text: "TensorFlow", position: [3.5, -2, 0], color: "#ff7043", size: 0.25 },
+      { text: "Innovation", position: [-2.5, 3, 0], color: "#66bb6a", size: 0.25 }
+    ];
+    setKeywords(techKeywords);
+    
+    // Generate falling particles on the left side
+    const tempFallingParticles = [];
+    for (let i = 0; i < 15; i++) {
+      const x = -4 + (Math.random() - 0.5) * 3; // Left side of the screen
+      const y = 5 - Math.random() * 10; // Random position from top to bottom
+      const z = Math.random() * 2 - 1; // Random depth
+      
+      // Colors for falling particles
+      let color;
+      if (i % 4 === 0) {
+        color = '#4fc3f7'; // blue
+      } else if (i % 4 === 1) {
+        color = '#7e57c2'; // purple
+      } else if (i % 4 === 2) {
+        color = '#ff5b79'; // pink
+      } else {
+        color = '#66bb6a'; // green
+      }
+      
+      const size = Math.random() * 0.3 + 0.2; // Larger particles
+      
+      tempFallingParticles.push({
+        id: `falling-${i}`,
+        position: [x, y, z],
+        color,
+        size
+      });
+    }
+    setFallingParticles(tempFallingParticles);
+    
     // Generate random particles
     const tempParticles = [];
     for (let i = 0; i < count; i++) {
-      const x = (Math.random() - 0.5) * 6;
+      const x = (Math.random() - 0.5) * 8; // Wider spread
       const y = (Math.random() - 0.5) * 6;
       const z = (Math.random() - 0.5) * 4;
       
       // Assign colors based on position (for visual effect)
       let color;
-      if (i % 4 === 0) {
+      if (i % 5 === 0) {
         color = '#ff5b79'; // pink
-      } else if (i % 4 === 1) {
+      } else if (i % 5 === 1) {
         color = '#4fc3f7'; // blue
-      } else if (i % 4 === 2) {
+      } else if (i % 5 === 2) {
         color = '#8bc34a'; // green
-      } else {
+      } else if (i % 5 === 3) {
         color = '#ffca28'; // yellow
+      } else {
+        color = '#7e57c2'; // purple
       }
       
       const size = Math.random() * 0.15 + 0.08;
@@ -207,19 +324,21 @@ const NeuralNetwork = ({ count = 40 }) => {
     
     // Generate lightning particles
     const tempLightning = [];
-    for (let i = 0; i < 30; i++) {
-      const x = (Math.random() - 0.5) * 8;
+    for (let i = 0; i < 40; i++) {
+      const x = (Math.random() - 0.5) * 10;
       const y = (Math.random() - 0.5) * 8;
       const z = (Math.random() - 0.5) * 2 - 2; // Behind the network
       
       // Lightning colors
       let color;
-      if (i % 3 === 0) {
+      if (i % 4 === 0) {
         color = '#4fc3f7'; // blue
-      } else if (i % 3 === 1) {
+      } else if (i % 4 === 1) {
         color = '#7e57c2'; // purple
-      } else {
+      } else if (i % 4 === 2) {
         color = '#26c6da'; // cyan
+      } else {
+        color = '#ff5b79'; // pink
       }
       
       tempLightning.push({
@@ -246,6 +365,16 @@ const NeuralNetwork = ({ count = 40 }) => {
         />
       ))}
       
+      {/* Falling particles on left side */}
+      {fallingParticles.map((particle) => (
+        <FallingParticle
+          key={particle.id}
+          position={particle.position}
+          color={particle.color}
+          size={particle.size}
+        />
+      ))}
+      
       {/* Neural network particles */}
       {particles.map((particle) => (
         <Particle
@@ -268,6 +397,17 @@ const NeuralNetwork = ({ count = 40 }) => {
         />
       ))}
       
+      {/* Floating keywords */}
+      {keywords.map((keyword, index) => (
+        <FloatingKeyword
+          key={index}
+          text={keyword.text}
+          position={keyword.position}
+          color={keyword.color}
+          size={keyword.size}
+        />
+      ))}
+      
       {/* BloomPointX 3D Text */}
       <FloatingText />
     </group>
@@ -277,59 +417,63 @@ const NeuralNetwork = ({ count = 40 }) => {
 // Main component with Canvas
 const NeuralNetworkAnimation = () => {
   return (
-    <div className="w-full h-[700px] relative neural-network-section">
+    <div className="w-full h-[800px] relative neural-network-section">
       {/* Background rotating circles */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-blue-500 rounded-full rotate-slow"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-purple-500 rounded-full rotate-slow" style={{animationDirection: 'reverse', animationDuration: '100s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-green-500 rounded-full rotate-slow" style={{animationDuration: '80s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] border border-blue-500 rounded-full rotate-slow"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-purple-500 rounded-full rotate-slow" style={{animationDirection: 'reverse', animationDuration: '100s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-green-500 rounded-full rotate-slow" style={{animationDuration: '80s'}}></div>
       </div>
       
-      <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} />
-        <spotLight position={[0, 5, 5]} angle={0.3} penumbra={1} intensity={1} castShadow />
+      <Canvas shadows camera={{ position: [0, 0, 10], fov: 50 }}>
+        <color attach="background" args={['#000015']} />
+        <ambientLight intensity={1.2} />
+        <pointLight position={[10, 10, 10]} intensity={2} />
+        <pointLight position={[-10, -10, -10]} intensity={1} color="#4fc3f7" />
+        <spotLight position={[0, 5, 10]} angle={0.3} penumbra={1} intensity={2} castShadow />
         <NeuralNetwork />
-        <OrbitControls enableZoom={false} enablePan={false} />
+        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
       </Canvas>
       
       {/* Overlay text */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-        <div className="neural-text">
-          <h2 className="text-3xl md:text-5xl font-bold mb-2 text-white bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent animate-float pulse-glow-strong">
-            Neural Fusion Network
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none z-10">
+        <div className="neural-text max-w-4xl w-full px-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white bg-gradient-to-r from-blue-400 via-purple-500 to-blue-500 bg-clip-text text-transparent animate-float pulse-glow-strong">
+            Tech Excellence Hub
           </h2>
-          <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <span className="text-green-400 text-xl">Advanced</span>
-            <span className="text-blue-400 text-xl">Digital</span>
-            <span className="text-purple-400 text-xl">Transform</span>
-            <span className="text-pink-400 text-xl">Reality</span>
-            <span className="text-yellow-400 text-xl">Evolution</span>
-            <span className="text-cyan-400 text-xl">Through</span>
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <span className="text-green-400 text-xl md:text-2xl font-bold glass-tag">Advanced</span>
+            <span className="text-blue-400 text-xl md:text-2xl font-bold glass-tag">Digital</span>
+            <span className="text-purple-400 text-xl md:text-2xl font-bold glass-tag">Transform</span>
+            <span className="text-pink-400 text-xl md:text-2xl font-bold glass-tag">Reality</span>
+            <span className="text-yellow-400 text-xl md:text-2xl font-bold glass-tag">Evolution</span>
           </div>
-          <p className="text-xl text-white mb-10 max-w-2xl px-4">
-            Transform your tech journey with our AI-powered learning experience
+          <p className="text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto px-4 font-light leading-relaxed">
+            BloomPointX - Where Technology Meets Your Career Growth
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl px-4">
-          <div className="glass-effect p-6 rounded-lg text-center neural-card">
-            <div className="text-4xl mb-3 text-blue-400">∞</div>
-            <h3 className="text-lg font-semibold text-white">POSSIBILITIES</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl px-6 w-full">
+          <div className="glass-card p-8 rounded-xl text-center neural-card">
+            <div className="text-5xl mb-4 text-blue-400">∞</div>
+            <h3 className="text-xl font-bold text-white mb-2">POSSIBILITIES</h3>
+            <p className="text-blue-200 text-sm">Unlimited learning pathways</p>
           </div>
-          <div className="glass-effect p-6 rounded-lg text-center neural-card">
-            <div className="text-4xl mb-3 text-pink-400">★</div>
-            <h3 className="text-lg font-semibold text-white">NEURAL SPEED</h3>
+          <div className="glass-card p-8 rounded-xl text-center neural-card">
+            <div className="text-5xl mb-4 text-pink-400">★</div>
+            <h3 className="text-xl font-bold text-white mb-2">NEURAL SPEED</h3>
+            <p className="text-pink-200 text-sm">Accelerated skill acquisition</p>
           </div>
-          <div className="glass-effect p-6 rounded-lg text-center neural-card">
-            <div className="text-4xl mb-3 text-purple-400">⚡</div>
-            <h3 className="text-lg font-semibold text-white">AI POWERED</h3>
+          <div className="glass-card p-8 rounded-xl text-center neural-card">
+            <div className="text-5xl mb-4 text-purple-400">⚡</div>
+            <h3 className="text-xl font-bold text-white mb-2">AI POWERED</h3>
+            <p className="text-purple-200 text-sm">Intelligent learning systems</p>
           </div>
         </div>
       </div>
       
       {/* Instruction text */}
-      <div className="absolute bottom-6 left-0 right-0 text-center text-white text-sm opacity-70 bg-black bg-opacity-30 py-2 z-10">
+      <div className="absolute bottom-6 left-0 right-0 text-center text-white text-sm glass-effect py-3 z-10 max-w-md mx-auto rounded-full">
         Hover or touch to interact with the neural network
       </div>
     </div>
