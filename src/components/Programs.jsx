@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { FaCode, FaLaptopCode, FaServer, FaDatabase, FaMobile, FaDesktop, FaPalette, FaChartLine } from 'react-icons/fa';
+import { FaCode, FaLaptopCode, FaServer, FaDatabase, FaMobile, FaDesktop, FaPalette, FaChartLine, FaCloud } from 'react-icons/fa';
 
 const Programs = () => {
   // Sample data for internship tracks
