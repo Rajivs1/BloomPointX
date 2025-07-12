@@ -43,7 +43,7 @@ const About = () => {
               <h2 className="text-3xl font-bold mb-3 text-white">Our Story</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mb-6 rounded-full"></div>
               <p className="text-gray-300 mb-4">
-                BloomPointX was founded in 2020 with a mission to bridge the gap between academic learning and industry requirements. We noticed that many graduates, despite having theoretical knowledge, struggled to adapt to real-world tech environments.
+                BloomPointX was founded in 2025 with a mission to bridge the gap between academic learning and industry requirements. We noticed that many graduates, despite having theoretical knowledge, struggled to adapt to real-world tech environments.
               </p>
               <p className="text-gray-300 mb-4">
                 Starting with just 5 interns and 2 mentors, we've grown to support over 500 interns annually across multiple tech disciplines. Our focus has always been on practical, hands-on learning guided by industry professionals.
