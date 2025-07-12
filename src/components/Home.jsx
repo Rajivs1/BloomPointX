@@ -100,45 +100,69 @@ const Home = () => {
       id: 1,
       name: "React Native",
       category: "Mobile",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      bgColor: "bg-cyan-900",
+      textColor: "text-cyan-300",
+      borderColor: "border-cyan-500"
     },
     {
       id: 2,
       name: "TypeScript",
       category: "Language",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      bgColor: "bg-blue-900",
+      textColor: "text-blue-300",
+      borderColor: "border-blue-500"
     },
     {
       id: 3,
       name: "Node.js",
       category: "Backend",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      bgColor: "bg-green-900",
+      textColor: "text-green-300",
+      borderColor: "border-green-500"
     },
     {
       id: 4,
       name: "Python",
       category: "Language",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      bgColor: "bg-yellow-900",
+      textColor: "text-yellow-300",
+      borderColor: "border-yellow-500"
     },
     {
       id: 5,
       name: ".NET",
       category: "Backend",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
+      bgColor: "bg-purple-900",
+      textColor: "text-purple-300",
+      borderColor: "border-purple-500"
     },
     {
       id: 6,
       name: "Java",
       category: "Language",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      bgColor: "bg-orange-900",
+      textColor: "text-orange-300",
+      borderColor: "border-orange-500"
     },
     {
       id: 7,
       name: "AWS",
       category: "Cloud",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      bgColor: "bg-gray-900",
+      textColor: "text-gray-300",
+      borderColor: "border-gray-500"
     }
   ];
+
+  // Duplicate technologies for infinite scroll effect
+  const duplicatedTechnologies = [...technologies, ...technologies];
 
   return (
     <div className="font-sans min-h-screen w-full">
@@ -174,19 +198,22 @@ const Home = () => {
       </section>
 
       {/* Technologies We Specialize In */}
-      <section className="py-16 w-full">
+      <section className="py-16 w-full overflow-hidden">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">TECHNOLOGIES WE SPECIALIZE IN</h2>
-          <div className="flex overflow-x-auto pb-4 space-x-8 no-scrollbar">
-            {technologies.map((tech) => (
-              <div key={tech.id} className="flex-none w-40">
-                <div className="bg-blue-900 bg-opacity-20 border border-blue-400 rounded-lg p-4 flex flex-col items-center hover:bg-blue-800 hover:bg-opacity-30 transition-all">
-                  <img src={tech.icon} alt={tech.name} className="w-16 h-16 mb-3" />
-                  <h3 className="text-lg font-semibold text-white">{tech.name}</h3>
-                  <p className="text-sm text-gray-300">{tech.category}</p>
+          
+          <div className="relative">
+            <div className="animate-marquee flex space-x-8">
+              {duplicatedTechnologies.map((tech, index) => (
+                <div key={`${tech.id}-${index}`} className="flex-none w-44">
+                  <div className={`${tech.bgColor} bg-opacity-30 border ${tech.borderColor} rounded-lg p-5 flex flex-col items-center hover:bg-opacity-50 transition-all`}>
+                    <img src={tech.icon} alt={tech.name} className="w-16 h-16 mb-3" />
+                    <h3 className={`text-lg font-semibold ${tech.textColor}`}>{tech.name}</h3>
+                    <p className="text-sm text-white opacity-80">{tech.category}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
