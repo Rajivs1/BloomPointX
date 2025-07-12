@@ -85,37 +85,99 @@ const Home = () => {
       id: 1,
       name: "Priya Sharma",
       role: "MERN Stack Intern",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
       text: "BloomPointX transformed my theoretical knowledge into practical skills. I built a full-stack app within 3 months and landed a job right after!",
+      color: "blue"
     },
     {
       id: 2,
-      name: "Alex Johnson",
+      name: "Rahul Verma",
       role: ".NET Developer",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
       text: "The mentorship I received was incredible. My mentor not only helped me with coding but also prepared me for interviews and industry expectations.",
+      color: "purple"
     },
     {
       id: 3,
-      name: "Mei Lin",
+      name: "Anjali Patel",
       role: "UI/UX Design Intern",
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
       text: "As a career switcher, I was worried about breaking into tech. BloomPointX's structured approach made it possible for me to transition smoothly.",
+      color: "green"
     },
+    {
+      id: 4,
+      name: "Vikram Singh",
+      role: "Data Analyst",
+      text: "The hands-on projects helped me build a strong portfolio. I received three job offers within a month of completing my internship!",
+      color: "teal"
+    },
+    {
+      id: 5,
+      name: "Neha Gupta",
+      role: "Full Stack Developer",
+      text: "The community at BloomPointX is amazing. I learned as much from my peers as I did from the structured curriculum.",
+      color: "red"
+    },
+    {
+      id: 6,
+      name: "Arjun Reddy",
+      role: "Python Developer",
+      text: "The DSA track prepared me thoroughly for technical interviews. I cracked interviews at top tech companies thanks to this preparation.",
+      color: "orange"
+    },
+    {
+      id: 7,
+      name: "Kavita Desai",
+      role: "Frontend Engineer",
+      text: "I joined with zero coding experience and within 6 months I was building professional-grade React applications. Amazing journey!",
+      color: "amber"
+    },
+    {
+      id: 8,
+      name: "Rajesh Kumar",
+      role: "Backend Developer",
+      text: "The Node.js and Express modules were comprehensive and practical. I'm now confidently building robust APIs for my company.",
+      color: "blue"
+    }
   ];
+
+  // Duplicate testimonials for continuous scroll effect
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   // Technologies we specialize in
   const technologies = [
     {
       id: 1,
-      name: "React Native",
-      category: "Mobile",
+      name: "React",
+      category: "Frontend",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       className: "tech-card-react",
       textColor: "text-[#61dafb]"
     },
     {
       id: 2,
+      name: "HTML5",
+      category: "Frontend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      className: "tech-card-html",
+      textColor: "text-[#e34c26]"
+    },
+    {
+      id: 3,
+      name: "CSS3",
+      category: "Frontend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      className: "tech-card-css",
+      textColor: "text-[#264de4]"
+    },
+    {
+      id: 4,
+      name: "JavaScript",
+      category: "Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      className: "tech-card-javascript",
+      textColor: "text-[#f7df1e]"
+    },
+    {
+      id: 5,
       name: "TypeScript",
       category: "Language",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
@@ -123,7 +185,7 @@ const Home = () => {
       textColor: "text-[#007acc]"
     },
     {
-      id: 3,
+      id: 6,
       name: "Node.js",
       category: "Backend",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
@@ -131,7 +193,31 @@ const Home = () => {
       textColor: "text-[#43853d]"
     },
     {
-      id: 4,
+      id: 7,
+      name: "Express",
+      category: "Backend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      className: "tech-card-express",
+      textColor: "text-[#ffffff]"
+    },
+    {
+      id: 8,
+      name: "MongoDB",
+      category: "Database",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      className: "tech-card-mongodb",
+      textColor: "text-[#47A248]"
+    },
+    {
+      id: 9,
+      name: "SQL",
+      category: "Database",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      className: "tech-card-sql",
+      textColor: "text-[#4479A1]"
+    },
+    {
+      id: 10,
       name: "Python",
       category: "Language",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -139,7 +225,7 @@ const Home = () => {
       textColor: "text-[#ffd43b]"
     },
     {
-      id: 5,
+      id: 11,
       name: ".NET",
       category: "Backend",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
@@ -147,7 +233,7 @@ const Home = () => {
       textColor: "text-[#512bd4]"
     },
     {
-      id: 6,
+      id: 12,
       name: "Java",
       category: "Language",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
@@ -155,12 +241,20 @@ const Home = () => {
       textColor: "text-[#f8981d]"
     },
     {
-      id: 7,
+      id: 13,
       name: "AWS",
       category: "Cloud",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
       className: "tech-card-aws",
       textColor: "text-[#ff9900]"
+    },
+    {
+      id: 14,
+      name: "Git",
+      category: "Tool",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      className: "tech-card-git",
+      textColor: "text-[#F05032]"
     }
   ];
 
@@ -210,16 +304,38 @@ const Home = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
           
           <div className="relative">
-            <div className="animate-marquee flex space-x-8">
-              {duplicatedTechnologies.map((tech, index) => (
-                <div key={`${tech.id}-${index}`} className="flex-none w-44">
-                  <div className={`${tech.className} rounded-lg p-5 flex flex-col items-center hover:bg-opacity-50 transition-all animate-float`} style={{animationDelay: `${index * 0.2}s`}}>
-                    <img src={tech.icon} alt={tech.name} className="w-16 h-16 mb-3" />
-                    <h3 className={`text-lg font-semibold ${tech.textColor}`}>{tech.name}</h3>
-                    <p className="text-sm text-white opacity-80">{tech.category}</p>
+            {/* Desktop auto-scrolling version */}
+            <div className="hidden md:block">
+              <div className="animate-marquee-fast flex space-x-6">
+                {duplicatedTechnologies.map((tech, index) => (
+                  <div key={`${tech.id}-${index}`} className="flex-none w-32">
+                    <div className={`${tech.className} rounded-full p-4 flex flex-col items-center hover:bg-opacity-50 transition-all animate-float`} style={{animationDelay: `${index * 0.1}s`}}>
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center bg-opacity-20 bg-white p-3 mb-3">
+                        <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
+                      </div>
+                      <h3 className={`text-base font-semibold ${tech.textColor}`}>{tech.name}</h3>
+                      <p className="text-xs text-white opacity-80">{tech.category}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            
+            {/* Mobile manually scrollable version */}
+            <div className="md:hidden overflow-x-auto pb-4 scrollbar-hide">
+              <div className="flex space-x-4 px-2">
+                {technologies.map((tech) => (
+                  <div key={tech.id} className="flex-none w-28">
+                    <div className={`${tech.className} rounded-full p-4 flex flex-col items-center hover:bg-opacity-50 transition-all`}>
+                      <div className="w-14 h-14 rounded-full flex items-center justify-center bg-opacity-20 bg-white p-2 mb-2">
+                        <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
+                      </div>
+                      <h3 className={`text-sm font-semibold ${tech.textColor}`}>{tech.name}</h3>
+                      <p className="text-xs text-white opacity-80">{tech.category}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -284,36 +400,58 @@ const Home = () => {
       </section>
 
       {/* Particle Animation Section */}
-      <section className="py-20 md:py-32 w-full relative overflow-hidden particle-animation-section">
+      <section className="py-2 sm:py-4 md:py-6 lg:py-16 xl:py-24 w-full relative overflow-hidden particle-animation-section">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[rgba(0,0,34,1)] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[rgba(0,0,34,1)] to-transparent z-10 pointer-events-none"></div>
-        <div className="container mx-auto px-4 max-w-full relative z-10">
+        <div className="absolute top-0 left-0 w-full h-6 sm:h-10 md:h-16 lg:h-20 bg-gradient-to-b from-[rgba(0,0,34,1)] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-full h-6 sm:h-10 md:h-16 lg:h-20 bg-gradient-to-t from-[rgba(0,0,34,1)] to-transparent z-10 pointer-events-none"></div>
+        <div className="w-full mx-auto relative z-10">
           <ParticleAnimation />
         </div>
       </section>
 
       {/* Success Stories */}
-      <section className="py-16 md:py-24 w-full">
+      <section className="py-16 md:py-24 w-full overflow-hidden">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Success Stories</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
               Hear from our alumni who transformed their careers through our internship program
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={testimonial.id} className="animate-float" style={{animationDelay: `${index * 0.2}s`}}>
-                <TestimonialCard
-                  name={testimonial.name}
-                  role={testimonial.role}
-                  image={testimonial.image}
-                  text={testimonial.text}
-                />
+          
+          <div className="relative">
+            {/* Desktop auto-scrolling version */}
+            <div className="hidden md:block">
+              <div className="animate-marquee-slow flex space-x-6 pb-4">
+                {duplicatedTestimonials.map((testimonial, index) => (
+                  <div key={`${testimonial.id}-${index}`} className="flex-none w-[280px] sm:w-[320px] md:w-[360px]">
+                    <TestimonialCard
+                      name={testimonial.name}
+                      role={testimonial.role}
+                      text={testimonial.text}
+                      color={testimonial.color}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            
+            {/* Mobile manually scrollable version */}
+            <div className="md:hidden overflow-x-auto pb-4 scrollbar-hide">
+              <div className="flex space-x-4 px-2">
+                {testimonials.map((testimonial) => (
+                  <div key={testimonial.id} className="flex-none w-[260px]">
+                    <TestimonialCard
+                      name={testimonial.name}
+                      role={testimonial.role}
+                      text={testimonial.text}
+                      color={testimonial.color}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
