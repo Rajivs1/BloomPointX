@@ -103,14 +103,20 @@ const About = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Team Member 1 */}
-            <div className="glass-effect p-6 rounded-xl hover:shadow-lg transition-all duration-300 animate-float border-t-4 border-blue-500" style={{animationDelay: '0.1s'}}>
-              <div className="flex flex-col h-full">
-                <div className="text-4xl text-blue-400 mb-4">👨‍💼</div>
-                <h3 className="text-xl font-semibold text-white mb-1">Mohd Imran </h3>
-                <p className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-medium mb-3">Founder & CEO</p>
-                <p className="text-gray-300 text-sm flex-grow">
-                  Having a graet Experience in MERN Stack , Devops and  also a great leader.
-                </p>
+            <div className="relative overflow-hidden rounded-xl transition-all duration-500 group hover:shadow-2xl hover:-translate-y-2 animate-float" style={{animationDelay: '0.1s'}}>
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 opacity-75 rounded-xl"></div>
+              
+              {/* Card content with glass effect */}
+              <div className="relative m-[2px] glass-effect rounded-xl p-6 h-full flex flex-col justify-between bg-gray-900/80 backdrop-blur-md">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-blue-500 transition-all duration-500">Mohd Imran</h3>
+                  <p className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-medium mb-4">Founder & CEO</p>
+                  <p className="text-gray-300 text-sm flex-grow">
+                    Having a great Experience in MERN Stack, Devops and also a great leader.
+                  </p>
+                </div>
+                
                 <div className="flex space-x-3 mt-4">
                   <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -122,18 +128,27 @@ const About = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                   </div>
                 </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-500 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
               </div>
             </div>
             
             {/* Team Member 2 */}
-            <div className="glass-effect p-6 rounded-xl hover:shadow-lg transition-all duration-300 animate-float border-t-4 border-purple-500" style={{animationDelay: '0.3s'}}>
-              <div className="flex flex-col h-full">
-                <div className="text-4xl text-purple-400 mb-4">👨‍💼</div>
-                <h3 className="text-xl font-semibold text-white mb-1">Rajiv Ranjan</h3>
-                <p className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent font-medium mb-3">Chief Operations Officer</p>
-                <p className="text-gray-300 text-sm flex-grow">
-                  Education specialist with experience at top coding bootcamps and universities.
-                </p>
+            <div className="relative overflow-hidden rounded-xl transition-all duration-500 group hover:shadow-2xl hover:-translate-y-2 animate-float" style={{animationDelay: '0.3s'}}>
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 opacity-75 rounded-xl"></div>
+              
+              {/* Card content with glass effect */}
+              <div className="relative m-[2px] glass-effect rounded-xl p-6 h-full flex flex-col justify-between bg-gray-900/80 backdrop-blur-md">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-300 group-hover:to-purple-500 transition-all duration-500">Rajiv Ranjan</h3>
+                  <p className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent font-medium mb-4">Chief Operations Officer</p>
+                  <p className="text-gray-300 text-sm flex-grow">
+                    Education specialist with experience at top coding bootcamps and universities.
+                  </p>
+                </div>
+                
                 <div className="flex space-x-3 mt-4">
                   <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -145,18 +160,27 @@ const About = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-400"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                   </div>
                 </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-10 -right-10 w-24 h-24 bg-purple-500 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
               </div>
             </div>
             
             {/* Team Member 3 */}
-            <div className="glass-effect p-6 rounded-xl hover:shadow-lg transition-all duration-300 animate-float border-t-4 border-green-500" style={{animationDelay: '0.5s'}}>
-              <div className="flex flex-col h-full">
-                <div className="text-4xl text-green-400 mb-4">👨‍💻</div>
-                <h3 className="text-xl font-semibold text-white mb-1">Harsh Pratap Singh</h3>
-                <p className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent font-medium mb-3">Chief Technology Officer</p>
-                <p className="text-gray-300 text-sm flex-grow">
-                  Full-stack architect with expertise in modern web technologies and cloud platforms.
-                </p>
+            <div className="relative overflow-hidden rounded-xl transition-all duration-500 group hover:shadow-2xl hover:-translate-y-2 animate-float" style={{animationDelay: '0.5s'}}>
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500 via-green-600 to-green-700 opacity-75 rounded-xl"></div>
+              
+              {/* Card content with glass effect */}
+              <div className="relative m-[2px] glass-effect rounded-xl p-6 h-full flex flex-col justify-between bg-gray-900/80 backdrop-blur-md">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-green-300 group-hover:to-green-500 transition-all duration-500">Harsh Pratap Singh</h3>
+                  <p className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent font-medium mb-4">Chief Technology Officer</p>
+                  <p className="text-gray-300 text-sm flex-grow">
+                    Full-stack architect with expertise in modern web technologies and cloud platforms.
+                  </p>
+                </div>
+                
                 <div className="flex space-x-3 mt-4">
                   <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -168,18 +192,27 @@ const About = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                   </div>
                 </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-10 -right-10 w-24 h-24 bg-green-500 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
               </div>
             </div>
             
             {/* Team Member 4 */}
-            <div className="glass-effect p-6 rounded-xl hover:shadow-lg transition-all duration-300 animate-float border-t-4 border-yellow-500" style={{animationDelay: '0.7s'}}>
-              <div className="flex flex-col h-full">
-                <div className="text-4xl text-yellow-400 mb-4">👨‍💻</div>
-                <h3 className="text-xl font-semibold text-white mb-1">Pradeep Nagarkoti </h3>
-                <p className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent font-medium mb-3">Head of Mentorship</p>
-                <p className="text-gray-300 text-sm flex-grow">
-                  Expert in Data Analaytics and Machine Learning and also a great mentor.
-                </p>
+            <div className="relative overflow-hidden rounded-xl transition-all duration-500 group hover:shadow-2xl hover:-translate-y-2 animate-float" style={{animationDelay: '0.7s'}}>
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 via-amber-500 to-orange-500 opacity-75 rounded-xl"></div>
+              
+              {/* Card content with glass effect */}
+              <div className="relative m-[2px] glass-effect rounded-xl p-6 h-full flex flex-col justify-between bg-gray-900/80 backdrop-blur-md">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:to-amber-500 transition-all duration-500">Pradeep Nagarkoti</h3>
+                  <p className="bg-gradient-to-r from-yellow-400 to-amber-600 bg-clip-text text-transparent font-medium mb-4">Head of Mentorship</p>
+                  <p className="text-gray-300 text-sm flex-grow">
+                    Expert in Data Analytics and Machine Learning and also a great mentor.
+                  </p>
+                </div>
+                
                 <div className="flex space-x-3 mt-4">
                   <div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -191,6 +224,9 @@ const About = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                   </div>
                 </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-10 -right-10 w-24 h-24 bg-yellow-500 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500"></div>
               </div>
             </div>
           </div>
