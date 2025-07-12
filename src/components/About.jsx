@@ -128,7 +128,7 @@ const About = () => {
             {/* Team Member 2 */}
             <div className="glass-effect p-6 rounded-xl hover:shadow-lg transition-all duration-300 animate-float border-t-4 border-purple-500" style={{animationDelay: '0.3s'}}>
               <div className="flex flex-col h-full">
-                <div className="text-4xl text-purple-400 mb-4">👩‍💼</div>
+                <div className="text-4xl text-purple-400 mb-4">👨‍💼</div>
                 <h3 className="text-xl font-semibold text-white mb-1">Rajiv Ranjan</h3>
                 <p className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent font-medium mb-3">Chief Operations Officer</p>
                 <p className="text-gray-300 text-sm flex-grow">
