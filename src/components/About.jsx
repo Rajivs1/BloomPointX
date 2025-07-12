@@ -77,8 +77,8 @@ const About = () => {
                 <h3 className="text-xl font-semibold mb-4 text-blue-300">Practical Learning</h3>
                 <p className="text-gray-300">
                   We focus on hands-on projects that simulate real workplace challenges and build portfolios.
-                </p>
-              </div>
+                  </p>
+                </div>
               <div className="glass-effect p-6 rounded-lg border-l-4 border-purple-500 animate-float" style={{animationDelay: '0.3s'}}>
                 <h3 className="text-xl font-semibold mb-4 text-purple-300">Mentorship</h3>
                 <p className="text-gray-300">
@@ -194,10 +194,10 @@ const About = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button className="bg-white text-blue-600 hover:bg-blue-50 font-semibold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 btn-shiny animate-pulse-glow">
                 Apply Now
-              </button>
+            </button>
               <button className="glass-effect border border-white/30 text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1">
                 Learn More
-              </button>
+            </button>
             </div>
           </div>
         </div>

@@ -176,6 +176,50 @@ button:focus-visible {
   z-index: 1;
 }
 
+/* Enhanced Neural Network Animation Styles */
+@keyframes lightning-flash {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.lightning-particle {
+  animation: lightning-flash 0.5s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+@keyframes rotate-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-slow {
+  animation: rotate-slow 120s linear infinite;
+}
+
+@keyframes pulse-glow-strong {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(66, 153, 225, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(66, 153, 225, 0.8)) drop-shadow(0 0 30px rgba(66, 153, 225, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(66, 153, 225, 0.5));
+  }
+}
+
+.pulse-glow-strong {
+  animation: pulse-glow-strong 3s infinite;
+}
+
 /* Tech card gradients */
 .tech-card-react {
   background: linear-gradient(135deg, #61dafb20 0%, #282c3420 100%);

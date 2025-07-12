@@ -284,8 +284,10 @@ const Home = () => {
       </section>
 
       {/* Neural Network Animation Section */}
-      <section className="py-16 md:py-24 w-full bg-gradient-to-r from-blue-900 to-purple-900 relative overflow-hidden neural-network-section">
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <section className="py-20 md:py-32 w-full bg-gradient-to-r from-blue-900 via-purple-900 to-blue-900 relative overflow-hidden neural-network-section">
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[rgba(0,0,34,1)] to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[rgba(0,0,34,1)] to-transparent"></div>
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <NeuralNetworkAnimation />
         </div>
