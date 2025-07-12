@@ -119,6 +119,63 @@ button:focus-visible {
   animation: pulse-glow 2s infinite;
 }
 
+/* Neural Network Animation Styles */
+@keyframes float-text {
+  0% {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+}
+
+.neural-text {
+  animation: float-text 4s ease-in-out infinite;
+}
+
+.neural-card {
+  transition: all 0.3s ease;
+  transform: perspective(1000px) rotateX(0) rotateY(0);
+  transform-style: preserve-3d;
+}
+
+.neural-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 0 30px rgba(66, 153, 225, 0.3);
+}
+
+.neural-network-section {
+  position: relative;
+}
+
+.neural-network-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 34, 1), transparent);
+  z-index: 1;
+}
+
+.neural-network-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(0, 0, 34, 1), transparent);
+  z-index: 1;
+}
+
 /* Tech card gradients */
 .tech-card-react {
   background: linear-gradient(135deg, #61dafb20 0%, #282c3420 100%);
