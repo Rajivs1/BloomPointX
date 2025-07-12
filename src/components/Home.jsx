@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import InternshipCard from './InternshipCard';
 import TestimonialCard from './TestimonialCard';
-import NeuralNetworkAnimation from './NeuralNetworkAnimation';
+import ParticleAnimation from './ParticleAnimation';
 import { FaCode, FaLaptopCode, FaChartLine, FaPalette, FaDatabase, 
          FaProjectDiagram, FaUserTie, FaCertificate, FaClock } from 'react-icons/fa';
 
@@ -283,13 +283,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Neural Network Animation Section */}
-      <section className="py-20 md:py-32 w-full relative overflow-hidden neural-network-section">
+      {/* Particle Animation Section */}
+      <section className="py-20 md:py-32 w-full relative overflow-hidden particle-animation-section">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[rgba(0,0,34,1)] to-transparent z-10 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[rgba(0,0,34,1)] to-transparent z-10 pointer-events-none"></div>
         <div className="container mx-auto px-4 max-w-full relative z-10">
-          <NeuralNetworkAnimation />
+          <ParticleAnimation />
         </div>
       </section>
 

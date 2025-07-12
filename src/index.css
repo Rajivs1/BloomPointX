@@ -150,12 +150,14 @@ button:focus-visible {
   box-shadow: 0 0 30px rgba(66, 153, 225, 0.3);
 }
 
-.neural-network-section {
+.neural-network-section,
+.particle-animation-section {
   position: relative;
   background-color: #000015;
 }
 
-.neural-network-section::before {
+.neural-network-section::before,
+.particle-animation-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -167,7 +169,8 @@ button:focus-visible {
   pointer-events: none;
 }
 
-.neural-network-section::after {
+.neural-network-section::after,
+.particle-animation-section::after {
   content: '';
   position: absolute;
   bottom: 0;
