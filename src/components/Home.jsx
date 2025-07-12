@@ -137,7 +137,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="font-sans min-h-screen bg-white w-full">
+    <div className="font-sans min-h-screen w-full">
       {/* Navbar will be placed here */}
       <Navbar />
 
@@ -170,11 +170,11 @@ const Home = () => {
       </section>
 
       {/* Internship Categories */}
-      <section className="py-16 md:py-24 bg-white w-full">
+      <section className="py-16 md:py-24 w-full">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Internship Tracks</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Internship Tracks</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Choose your path and build industry-relevant skills with our specialized internship tracks
             </p>
           </div>
@@ -192,11 +192,11 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 md:py-24 bg-gray-50 w-full">
+      <section className="py-16 md:py-24 w-full">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Us</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose Us</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Our internship program is designed to give you the skills, experience, and confidence needed to excel in tech
             </p>
           </div>
@@ -216,11 +216,11 @@ const Home = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="py-16 md:py-24 bg-white w-full">
+      <section className="py-16 md:py-24 w-full">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Success Stories</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Success Stories</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Hear from our alumni who transformed their careers through our internship program
             </p>
           </div>
@@ -239,11 +239,11 @@ const Home = () => {
       </section>
 
       {/* Meet Our Mentors */}
-      <section className="py-16 md:py-24 bg-gray-50 w-full">
+      <section className="py-16 md:py-24 w-full">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet Our Mentors</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Meet Our Mentors</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Learn from industry experts with years of experience in leading tech companies
             </p>
           </div>
