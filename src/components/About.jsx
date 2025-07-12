@@ -43,7 +43,7 @@ const About = () => {
               <h2 className="text-3xl font-bold mb-3 text-white">Our Story</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mb-6 rounded-full"></div>
               <p className="text-gray-300 mb-4">
-                BloomPointX was founded in 2020 with a mission to bridge the gap between academic learning and industry requirements. We noticed that many graduates, despite having theoretical knowledge, struggled to adapt to real-world tech environments.
+                BloomPointX was founded in 2025 with a mission to bridge the gap between academic learning and industry requirements. We noticed that many graduates, despite having theoretical knowledge, struggled to adapt to real-world tech environments.
               </p>
               <p className="text-gray-300 mb-4">
                 Starting with just 5 interns and 2 mentors, we've grown to support over 500 interns annually across multiple tech disciplines. Our focus has always been on practical, hands-on learning guided by industry professionals.
@@ -103,67 +103,95 @@ const About = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Team Member 1 */}
-            <div className="text-center glass-effect p-6 rounded-lg animate-float" style={{animationDelay: '0.1s'}}>
-              <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-4 border-4 border-blue-500 animate-pulse-glow">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" 
-                  alt="CEO" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="glass-effect p-6 rounded-xl hover:shadow-lg transition-all duration-300 animate-float border-t-4 border-blue-500" style={{animationDelay: '0.1s'}}>
+              <div className="flex flex-col h-full">
+                <div className="text-4xl text-blue-400 mb-4">👨‍💼</div>
+                <h3 className="text-xl font-semibold text-white mb-1">Mohd Imran </h3>
+                <p className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-medium mb-3">Founder & CEO</p>
+                <p className="text-gray-300 text-sm flex-grow">
+                  Having a graet Experience in MERN Stack , Devops and  also a great leader.
+                </p>
+                <div className="flex space-x-3 mt-4">
+                  <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-white">Alex Johnson</h3>
-              <p className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent font-medium mb-2">Founder & CEO</p>
-              <p className="text-gray-300 text-sm">
-                Former tech lead at Google with 15+ years of experience in software development.
-              </p>
             </div>
             
             {/* Team Member 2 */}
-            <div className="text-center glass-effect p-6 rounded-lg animate-float" style={{animationDelay: '0.3s'}}>
-              <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-4 border-4 border-purple-500 animate-pulse-glow">
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" 
-                  alt="COO" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="glass-effect p-6 rounded-xl hover:shadow-lg transition-all duration-300 animate-float border-t-4 border-purple-500" style={{animationDelay: '0.3s'}}>
+              <div className="flex flex-col h-full">
+                <div className="text-4xl text-purple-400 mb-4">👩‍💼</div>
+                <h3 className="text-xl font-semibold text-white mb-1">Rajiv Ranjan</h3>
+                <p className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent font-medium mb-3">Chief Operations Officer</p>
+                <p className="text-gray-300 text-sm flex-grow">
+                  Education specialist with experience at top coding bootcamps and universities.
+                </p>
+                <div className="flex space-x-3 mt-4">
+                  <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-400"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-400"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-white">Sarah Chen</h3>
-              <p className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent font-medium mb-2">Chief Operations Officer</p>
-              <p className="text-gray-300 text-sm">
-                Education specialist with experience at top coding bootcamps and universities.
-              </p>
             </div>
             
             {/* Team Member 3 */}
-            <div className="text-center glass-effect p-6 rounded-lg animate-float" style={{animationDelay: '0.5s'}}>
-              <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-4 border-4 border-green-500 animate-pulse-glow">
-                <img 
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" 
-                  alt="CTO" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="glass-effect p-6 rounded-xl hover:shadow-lg transition-all duration-300 animate-float border-t-4 border-green-500" style={{animationDelay: '0.5s'}}>
+              <div className="flex flex-col h-full">
+                <div className="text-4xl text-green-400 mb-4">👨‍💻</div>
+                <h3 className="text-xl font-semibold text-white mb-1">Harsh Pratap Singh</h3>
+                <p className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent font-medium mb-3">Chief Technology Officer</p>
+                <p className="text-gray-300 text-sm flex-grow">
+                  Full-stack architect with expertise in modern web technologies and cloud platforms.
+                </p>
+                <div className="flex space-x-3 mt-4">
+                  <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-white">Michael Rodriguez</h3>
-              <p className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent font-medium mb-2">Chief Technology Officer</p>
-              <p className="text-gray-300 text-sm">
-                Full-stack architect with expertise in modern web technologies and cloud platforms.
-              </p>
             </div>
             
             {/* Team Member 4 */}
-            <div className="text-center glass-effect p-6 rounded-lg animate-float" style={{animationDelay: '0.7s'}}>
-              <div className="w-40 h-40 rounded-full overflow-hidden mx-auto mb-4 border-4 border-yellow-500 animate-pulse-glow">
-                <img 
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80" 
-                  alt="Head of Mentorship" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="glass-effect p-6 rounded-xl hover:shadow-lg transition-all duration-300 animate-float border-t-4 border-yellow-500" style={{animationDelay: '0.7s'}}>
+              <div className="flex flex-col h-full">
+                <div className="text-4xl text-yellow-400 mb-4">👨‍💻</div>
+                <h3 className="text-xl font-semibold text-white mb-1">Pradeep Nagarkoti </h3>
+                <p className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent font-medium mb-3">Head of Mentorship</p>
+                <p className="text-gray-300 text-sm flex-grow">
+                  Expert in Data Analaytics and Machine Learning and also a great mentor.
+                </p>
+                <div className="flex space-x-3 mt-4">
+                  <div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-400"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-white">Priya Patel</h3>
-              <p className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent font-medium mb-2">Head of Mentorship</p>
-              <p className="text-gray-300 text-sm">
-                Former senior engineer at Microsoft with a passion for developing tech talent.
-              </p>
             </div>
           </div>
         </div>

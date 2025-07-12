@@ -102,8 +102,8 @@ const Contact = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-white">Our Location</h3>
                     <p className="text-gray-300 mt-1">
-                      123 Tech Avenue, Suite 456<br />
-                      San Francisco, CA 94107
+                      Sector - 79 Fraidabad<br />
+                      Haryana , India 
                     </p>
                   </div>
                 </div>
@@ -128,8 +128,8 @@ const Contact = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-white">Call Us</h3>
                     <p className="text-gray-300 mt-1">
-                      +1 (555) 123-4567<br />
-                      +1 (555) 987-6543
+                      +91 9718535476 <br />
+                      +91 8521982915
                     </p>
                   </div>
                 </div>
@@ -179,7 +179,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 md:py-24 w-full">
+      {/* <section className="py-16 md:py-24 w-full">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3 text-white">Find Us</h2>
@@ -201,7 +201,7 @@ const Contact = () => {
             ></iframe>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section className="py-16 md:py-24 w-full">
