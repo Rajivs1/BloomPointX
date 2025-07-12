@@ -267,8 +267,8 @@ const Home = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-800 via-blue-700 to-blue-900 text-white w-full overflow-hidden">
-        <div className="container mx-auto px-4 py-20 md:py-28 flex flex-col items-center relative z-10 max-w-7xl">
+      <section className="relative bg-gradient-to-r from-blue-800 via-blue-700 to-blue-900 text-white w-full overflow-hidden pt-[60px]">
+        <div className="container mx-auto px-4 py-16 md:py-24 flex flex-col items-center relative z-10 max-w-7xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center leading-tight mb-6 animate-float">
             Bloom Your Tech Journey with Real Internships
           </h1>
@@ -279,9 +279,9 @@ const Home = () => {
             <button className="bg-white text-blue-600 hover:bg-blue-50 font-semibold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 btn-shiny animate-pulse-glow">
               Apply Now
             </button>
-            <button className="glass-effect text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+            {/* <button className="glass-effect text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1">
               Explore Tracks
-            </button>
+            </button> */}
           </div>
         </div>
         <div id="three-hero" className="absolute inset-0 z-0 opacity-30">
