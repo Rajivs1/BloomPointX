@@ -86,6 +86,289 @@ button:focus-visible {
   animation: marquee 30s linear infinite;
 }
 
+/* Enhanced animations and effects */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(66, 153, 225, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(66, 153, 225, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(66, 153, 225, 0.5);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Neural Network Animation Styles */
+@keyframes float-text {
+  0% {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+}
+
+.neural-text {
+  animation: float-text 4s ease-in-out infinite;
+}
+
+.neural-card {
+  transition: all 0.3s ease;
+  transform: perspective(1000px) rotateX(0) rotateY(0);
+  transform-style: preserve-3d;
+}
+
+.neural-card:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 0 30px rgba(66, 153, 225, 0.3);
+}
+
+.neural-network-section,
+.particle-animation-section {
+  position: relative;
+  background-color: #000015;
+}
+
+.neural-network-section::before,
+.particle-animation-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 34, 1), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.neural-network-section::after,
+.particle-animation-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(0, 0, 34, 1), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Enhanced Neural Network Animation Styles */
+@keyframes lightning-flash {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.lightning-particle {
+  animation: lightning-flash 0.5s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+@keyframes rotate-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-slow {
+  animation: rotate-slow 120s linear infinite;
+}
+
+@keyframes pulse-glow-strong {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(66, 153, 225, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(66, 153, 225, 0.8)) drop-shadow(0 0 40px rgba(66, 153, 225, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(66, 153, 225, 0.5));
+  }
+}
+
+.pulse-glow-strong {
+  animation: pulse-glow-strong 3s infinite;
+}
+
+/* Neural network enhanced styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+  transform: translateY(-5px);
+}
+
+.glass-tag {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Tech card gradients */
+.tech-card-react {
+  background: linear-gradient(135deg, #61dafb20 0%, #282c3420 100%);
+  border: 1px solid #61dafb;
+}
+
+.tech-card-typescript {
+  background: linear-gradient(135deg, #007acc20 0%, #1a202c20 100%);
+  border: 1px solid #007acc;
+}
+
+.tech-card-node {
+  background: linear-gradient(135deg, #43853d20 0%, #1a202c20 100%);
+  border: 1px solid #43853d;
+}
+
+.tech-card-python {
+  background: linear-gradient(135deg, #ffd43b20 0%, #30699820 100%);
+  border: 1px solid #ffd43b;
+}
+
+.tech-card-dotnet {
+  background: linear-gradient(135deg, #512bd420 0%, #1a202c20 100%);
+  border: 1px solid #512bd4;
+}
+
+.tech-card-java {
+  background: linear-gradient(135deg, #f8981d20 0%, #1a202c20 100%);
+  border: 1px solid #f8981d;
+}
+
+.tech-card-aws {
+  background: linear-gradient(135deg, #ff990020 0%, #1a202c20 100%);
+  border: 1px solid #ff9900;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Internship card gradients */
+.internship-card-mern {
+  background: linear-gradient(135deg, #3182ce20 0%, #1a202c20 100%);
+  border-left: 4px solid #3182ce;
+}
+
+.internship-card-dotnet {
+  background: linear-gradient(135deg, #805ad520 0%, #1a202c20 100%);
+  border-left: 4px solid #805ad5;
+}
+
+.internship-card-dsa {
+  background: linear-gradient(135deg, #dd634b20 0%, #1a202c20 100%);
+  border-left: 4px solid #dd634b;
+}
+
+.internship-card-uiux {
+  background: linear-gradient(135deg, #38b2ac20 0%, #1a202c20 100%);
+  border-left: 4px solid #38b2ac;
+}
+
+.internship-card-data {
+  background: linear-gradient(135deg, #d6936420 0%, #1a202c20 100%);
+  border-left: 4px solid #d69364;
+}
+
+/* Shiny button effect */
+.btn-shiny {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-shiny::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255, 255, 255, 0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotateZ(60deg) translate(-5em, 7.5em);
+  }
+  100% {
+    transform: rotateZ(60deg) translate(0, -7.5em);
+  }
+}
+
+/* Hero section wave animation */
+@keyframes wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.9);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.wave-animation {
+  animation: wave 15s linear infinite;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color: rgba(255, 255, 255, 0.87);
