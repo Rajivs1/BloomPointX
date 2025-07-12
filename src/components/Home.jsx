@@ -3,10 +3,8 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import InternshipCard from './InternshipCard';
 import TestimonialCard from './TestimonialCard';
-import MentorCard from './MentorCard';
 import { FaCode, FaLaptopCode, FaChartLine, FaPalette, FaDatabase, 
-         FaProjectDiagram, FaUserTie, FaCertificate, FaClock,
-         FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+         FaProjectDiagram, FaUserTie, FaCertificate, FaClock } from 'react-icons/fa';
 
 const Home = () => {
   // Sample data for internships
@@ -96,44 +94,50 @@ const Home = () => {
     },
   ];
 
-  // Sample mentors
-  const mentors = [
+  // Technologies we specialize in
+  const technologies = [
     {
       id: 1,
-      name: "Harsh Pratap",
-      domain: "MERN Stack Lead",
-      image: "https://randomuser.me/api/portraits/men/11.jpg",
+      name: "React Native",
+      category: "Mobile",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
     },
     {
       id: 2,
-      name: "Rajiv Ranjan",
-      domain: ".NET Development",
-      image: "https://randomuser.me/api/portraits/men/36.jpg",
+      name: "TypeScript",
+      category: "Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
     },
     {
       id: 3,
-      name: "Rajiv Ranjan",
-      domain: "DSA Expert",
-      image: "https://randomuser.me/api/portraits/men/36.jpg",
+      name: "Node.js",
+      category: "Backend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
     },
     {
       id: 4,
-      name: "Jessica Taylor",
-      domain: "UI/UX Design",
-      image: "https://randomuser.me/api/portraits/women/42.jpg",
+      name: "Python",
+      category: "Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
     },
     {
       id: 5,
-      name: "Pradeep Nagarkoti",
-      domain: "Data Analytics",
-      image: "https://randomuser.me/api/portraits/men/55.jpg",
+      name: ".NET",
+      category: "Backend",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
     },
     {
       id: 6,
-      name: "Mohd Imran",
-      domain: "Cloud Solutions",
-      image: "https://randomuser.me/api/portraits/women/63.jpg",
+      name: "Java",
+      category: "Language",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
     },
+    {
+      id: 7,
+      name: "AWS",
+      category: "Cloud",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+    }
   ];
 
   return (
@@ -166,6 +170,24 @@ const Home = () => {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
             <path fill="#ffffff" fillOpacity="1" d="M0,128L80,144C160,160,320,192,480,170.7C640,149,800,75,960,69.3C1120,64,1280,128,1360,160L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
           </svg>
+        </div>
+      </section>
+
+      {/* Technologies We Specialize In */}
+      <section className="py-16 w-full">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">TECHNOLOGIES WE SPECIALIZE IN</h2>
+          <div className="flex overflow-x-auto pb-4 space-x-8 no-scrollbar">
+            {technologies.map((tech) => (
+              <div key={tech.id} className="flex-none w-40">
+                <div className="bg-blue-900 bg-opacity-20 border border-blue-400 rounded-lg p-4 flex flex-col items-center hover:bg-blue-800 hover:bg-opacity-30 transition-all">
+                  <img src={tech.icon} alt={tech.name} className="w-16 h-16 mb-3" />
+                  <h3 className="text-lg font-semibold text-white">{tech.name}</h3>
+                  <p className="text-sm text-gray-300">{tech.category}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -232,28 +254,6 @@ const Home = () => {
                 role={testimonial.role}
                 image={testimonial.image}
                 text={testimonial.text}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Meet Our Mentors */}
-      <section className="py-16 md:py-24 w-full">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Meet Our Mentors</h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Learn from industry experts with years of experience in leading tech companies
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {mentors.map((mentor) => (
-              <MentorCard
-                key={mentor.id}
-                name={mentor.name}
-                domain={mentor.domain}
-                image={mentor.image}
               />
             ))}
           </div>
